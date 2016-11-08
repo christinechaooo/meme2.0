@@ -26,7 +26,7 @@
                                 <rect key="frame" x="-4" y="41" width="383" height="584"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gf5-Pi-yva">
-                                <rect key="frame" x="-4" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Pick an image" id="HNd-HR-Akw">
                                         <connections>
@@ -40,8 +40,26 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Yk-BW-OED" userLabel="bottomTF">
+                                <rect key="frame" x="36" y="545" width="303" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <connections>
+                                    <action selector="bottomTFBeginEdit:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="YX1-ct-gZh"/>
+                                    <action selector="bottomTFEditingEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="qM9-ms-w8n"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q8I-8i-B1o" userLabel="topTF">
+                                <rect key="frame" x="36" y="124" width="303" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <connections>
+                                    <action selector="topTFBeginEdit:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="K5U-aX-N4I"/>
+                                    <action selector="topTFEditingEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="NsV-O5-aCx"/>
+                                </connections>
+                            </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6el-7D-yz9">
-                                <rect key="frame" x="-4" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="Kao-8E-7ZK">
                                         <barButtonItem key="leftBarButtonItem" title="Share" id="To4-f1-gWW">
@@ -53,24 +71,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Yk-BW-OED" userLabel="bottomTF">
-                                <rect key="frame" x="36" y="545" width="303" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                <connections>
-                                    <action selector="bottomTFBeginEdit:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="YX1-ct-gZh"/>
-                                    <action selector="bottomTFEditingEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="qM9-ms-w8n"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q8I-8i-B1o" userLabel="topTF">
-                                <rect key="frame" x="36" y="104" width="303" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                <connections>
-                                    <action selector="topTFBeginEdit:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="K5U-aX-N4I"/>
-                                    <action selector="topTFEditingEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="NsV-O5-aCx"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -78,21 +78,20 @@
                             <constraint firstItem="9Yk-BW-OED" firstAttribute="top" secondItem="47o-iG-nrT" secondAttribute="bottom" constant="-80" id="8g7-2K-5o4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Yk-BW-OED" secondAttribute="trailing" constant="20" id="AZp-yB-Lpt"/>
                             <constraint firstItem="q8I-8i-B1o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bfk-33-TLn"/>
-                            <constraint firstItem="6el-7D-yz9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="CVC-oe-ocG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gf5-Pi-yva" secondAttribute="bottom" id="CWC-xF-Thh"/>
-                            <constraint firstItem="6el-7D-yz9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Gtr-eF-7sT"/>
+                            <constraint firstItem="6el-7D-yz9" firstAttribute="trailing" secondItem="gf5-Pi-yva" secondAttribute="trailing" id="JSI-lC-qjV"/>
+                            <constraint firstItem="gf5-Pi-yva" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" symbolic="YES" id="LoO-NG-KJS"/>
                             <constraint firstItem="gf5-Pi-yva" firstAttribute="top" secondItem="47o-iG-nrT" secondAttribute="bottom" constant="-2" id="Oe7-Jy-WhR"/>
                             <constraint firstItem="47o-iG-nrT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="Rlq-XF-6hp"/>
                             <constraint firstItem="47o-iG-nrT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SkQ-Kg-oph"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="47o-iG-nrT" secondAttribute="bottom" constant="42" id="Sy1-gh-8xC"/>
-                            <constraint firstItem="47o-iG-nrT" firstAttribute="top" secondItem="q8I-8i-B1o" secondAttribute="bottom" constant="-80" id="TBK-pd-eoC"/>
+                            <constraint firstItem="47o-iG-nrT" firstAttribute="top" secondItem="q8I-8i-B1o" secondAttribute="bottom" constant="-100" id="TBK-pd-eoC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="q8I-8i-B1o" secondAttribute="trailing" constant="20" id="Twe-dX-Y2Z"/>
-                            <constraint firstItem="gf5-Pi-yva" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="W9p-pT-Zcf"/>
                             <constraint firstItem="gf5-Pi-yva" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="dMB-fl-m9m"/>
-                            <constraint firstItem="6el-7D-yz9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="gpM-kO-iTq"/>
+                            <constraint firstItem="6el-7D-yz9" firstAttribute="leading" secondItem="gf5-Pi-yva" secondAttribute="leading" id="egO-Nn-ydx"/>
+                            <constraint firstItem="6el-7D-yz9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hyu-hU-qUR"/>
                             <constraint firstItem="9Yk-BW-OED" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nFH-i0-oj9"/>
                             <constraint firstItem="47o-iG-nrT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vuY-hA-8Iv"/>
-                            <constraint firstItem="47o-iG-nrT" firstAttribute="top" secondItem="6el-7D-yz9" secondAttribute="bottom" constant="-3" id="w08-EC-Toh"/>
                         </constraints>
                     </view>
                     <connections>
