@@ -18,29 +18,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomBar: UIToolbar!
     @IBOutlet weak var navBar: UINavigationBar!
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    let memeTextAttributes = [
+        NSStrokeColorAttributeName : UIColor.black,
+        NSForegroundColorAttributeName : UIColor.white,
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSStrokeWidthAttributeName : Float(-4)
+        ] as [String : Any]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let memeTextAttributes = [
-            NSStrokeColorAttributeName : UIColor.black,
-            NSForegroundColorAttributeName : UIColor.white,
-            NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSStrokeWidthAttributeName : Float(-4)
-        ] as [String : Any]
-        
-        topTF.defaultTextAttributes = memeTextAttributes
-        topTF.text = "TOP"
-        topTF.delegate = self
-        topTF.textAlignment = .center
-        topTF.autocapitalizationType = .allCharacters
-        
-        bottomTF.defaultTextAttributes = memeTextAttributes
-        bottomTF.text = "BOTTOM"
-        bottomTF.delegate = self
-        bottomTF.textAlignment = .center
-        bottomTF.autocapitalizationType = .allCharacters
+        configureTextStyle(textfield: topTF, withText: "TOP")
+        configureTextStyle(textfield: bottomTF, withText: "BOTTOM")
         
         shareBtn.isEnabled = false
+    }
+    
+    func configureTextStyle(textfield:UITextField, withText text:String) {
+        textfield.defaultTextAttributes = memeTextAttributes
+        textfield.text = text
+        textfield.delegate = self
+        textfield.textAlignment = .center
+        textfield.autocapitalizationType = .allCharacters
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,10 +54,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func pickImage(_ sender: UIBarButtonItem) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+        presentImagePickerWith(source: UIImagePickerControllerSourceType.photoLibrary)
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -73,9 +73,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func useCamera(_ sender: UIBarButtonItem) {
+        presentImagePickerWith(source: UIImagePickerControllerSourceType.camera)
+    }
+    
+    func presentImagePickerWith(source:UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+        imagePicker.sourceType = source
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -142,13 +146,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func save() {
         print("save")
-        let meme = Meme( text1: topTF.text!, text2: bottomTF.text!, image:
+        let meme = Meme( topText: topTF.text!, bottomText: bottomTF.text!, image:
             imageView.image!, memedImage: generateMemedImage())
     }
     
     struct Meme {
-        let text1:String
-        let text2:String
+        let topText:String
+        let bottomText:String
         let image:UIImage
         let memedImage:UIImage
     }
