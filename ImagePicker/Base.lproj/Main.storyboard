@@ -28,12 +28,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gf5-Pi-yva">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Pick an image" id="HNd-HR-Akw">
+                                    <barButtonItem title="Pick an Image" id="HNd-HR-Akw">
                                         <connections>
                                             <action selector="pickImage:" destination="BYZ-38-t0r" id="QG4-MT-n4m"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Camera" id="1Td-Bt-uec">
+                                    <barButtonItem systemItem="camera" id="1Td-Bt-uec">
                                         <connections>
                                             <action selector="useCamera:" destination="BYZ-38-t0r" id="1fR-IQ-NFA"/>
                                         </connections>
@@ -62,7 +62,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="Kao-8E-7ZK">
-                                        <barButtonItem key="leftBarButtonItem" title="Share" id="To4-f1-gWW">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="To4-f1-gWW">
                                             <connections>
                                                 <action selector="shareMeme:" destination="BYZ-38-t0r" id="2DS-0D-0jq"/>
                                             </connections>
