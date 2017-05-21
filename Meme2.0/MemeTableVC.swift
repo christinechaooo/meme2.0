@@ -47,7 +47,7 @@ class MemeTableVC: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell", for: indexPath) as! MemeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableCell", for: indexPath) as! MemeTableViewCell
         let meme = self.memeAll[(indexPath as NSIndexPath).row]
         
         cell.nameLabel?.text = meme.topText + meme.bottomText
