@@ -8,9 +8,11 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "MemeCollectionCell"
 
 class MemeCollectionVC: UICollectionViewController {
+    
+    var memeAll = [Meme]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,14 @@ class MemeCollectionVC: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        memeAll = appDelegate.memes
+        
+        self.collectionView?.reloadData()
+        //self.collectionView.reloadData()
+    }
     /*
     // MARK: - Navigation
 
@@ -41,19 +50,17 @@ class MemeCollectionVC: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return memeAll.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MemeCollectionViewCell
+        let meme = self.memeAll[(indexPath as NSIndexPath).row]
+        
+        cell.memeImageView?.image = meme.memedImage
     
         // Configure the cell
     

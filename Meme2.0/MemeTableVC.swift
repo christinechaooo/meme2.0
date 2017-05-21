@@ -15,6 +15,9 @@ class MemeTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.estimatedRowHeight = 100.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,10 +26,8 @@ class MemeTableVC: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("view will appear")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memeAll = appDelegate.memes
-        print(memeAll)
         
         self.tableView.reloadData()
     }
@@ -51,20 +52,7 @@ class MemeTableVC: UITableViewController {
         
         cell.nameLabel?.text = meme.topText + meme.bottomText
         cell.memeImageView?.image = meme.memedImage
-        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "VillainCell")!
-//        let villain = self.allVillains[(indexPath as NSIndexPath).row]
-//        
-//        // Set the name and image
-//        cell.textLabel?.text = villain.name
-//        cell.imageView?.image = UIImage(named: villain.imageName)
-//        
-//        // If the cell has a detail label, we will put the evil scheme in.
-//        if let detailTextLabel = cell.detailTextLabel {
-//            detailTextLabel.text = "Scheme: \(villain.evilScheme)"
-//        }
 
-        // Configure the cell...
 
         return cell
     }

@@ -163,7 +163,6 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func generateMemedImage() -> UIImage
     {
-//        navigationController?.navigationBar.isHidden = true
         navBar.isHidden = true
         self.bottomBar.isHidden = true
         
