@@ -123,18 +123,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableCell" rowHeight="100" id="dIR-G8-M5v" customClass="MemeTableViewCell" customModule="Meme2_0" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableCell" rowHeight="90" id="dIR-G8-M5v" customClass="MemeTableViewCell" customModule="Meme2_0" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dIR-G8-M5v" id="8ci-Oc-Vhl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J04-8M-hBy">
-                                            <rect key="frame" x="0.0" y="0.0" width="140" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="89.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="90" id="Tch-ig-Pz1"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Usr-19-Vgx">
-                                            <rect key="frame" x="148" y="39.5" width="42" height="21"/>
+                                            <rect key="frame" x="148" y="34.5" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -143,7 +146,7 @@
                                     <constraints>
                                         <constraint firstItem="Usr-19-Vgx" firstAttribute="leading" secondItem="J04-8M-hBy" secondAttribute="trailing" constant="8" id="1uU-dL-xrR"/>
                                         <constraint firstItem="Usr-19-Vgx" firstAttribute="centerY" secondItem="8ci-Oc-Vhl" secondAttribute="centerY" id="WaL-QE-Awf"/>
-                                        <constraint firstItem="J04-8M-hBy" firstAttribute="centerY" secondItem="8ci-Oc-Vhl" secondAttribute="centerY" id="YKc-Pr-pNv"/>
+                                        <constraint firstItem="J04-8M-hBy" firstAttribute="top" secondItem="8ci-Oc-Vhl" secondAttribute="topMargin" constant="-8" id="bqk-Nv-fJF"/>
                                         <constraint firstItem="J04-8M-hBy" firstAttribute="leading" secondItem="8ci-Oc-Vhl" secondAttribute="leading" id="fYG-Gf-M1L"/>
                                         <constraint firstItem="J04-8M-hBy" firstAttribute="top" secondItem="8ci-Oc-Vhl" secondAttribute="top" id="mBP-gd-P1g"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="J04-8M-hBy" secondAttribute="trailing" constant="227" id="zm8-Dz-RRB"/>

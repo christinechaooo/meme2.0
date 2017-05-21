@@ -15,7 +15,7 @@ class MemeTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.estimatedRowHeight = 100.0
+        tableView.estimatedRowHeight = 90.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
         // Uncomment the following line to preserve selection between presentations
@@ -50,7 +50,7 @@ class MemeTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableCell", for: indexPath) as! MemeTableViewCell
         let meme = self.memeAll[(indexPath as NSIndexPath).row]
         
-        cell.nameLabel?.text = meme.topText + meme.bottomText
+        cell.nameLabel?.text = meme.topText + " / " + meme.bottomText
         cell.memeImageView?.image = meme.memedImage
 
 
