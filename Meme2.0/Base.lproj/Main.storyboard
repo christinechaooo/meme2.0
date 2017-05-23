@@ -244,7 +244,7 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Yk-BW-OED" userLabel="bottomTF">
-                                <rect key="frame" x="36" y="545" width="303" height="17"/>
+                                <rect key="frame" x="36" y="525" width="303" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <connections>
@@ -285,7 +285,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9Yk-BW-OED" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="3Bt-SE-cI9"/>
-                            <constraint firstItem="9Yk-BW-OED" firstAttribute="top" secondItem="47o-iG-nrT" secondAttribute="bottom" constant="-80" id="8g7-2K-5o4"/>
+                            <constraint firstItem="9Yk-BW-OED" firstAttribute="top" secondItem="47o-iG-nrT" secondAttribute="bottom" constant="-100" id="8g7-2K-5o4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Yk-BW-OED" secondAttribute="trailing" constant="20" id="AZp-yB-Lpt"/>
                             <constraint firstItem="q8I-8i-B1o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bfk-33-TLn"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gf5-Pi-yva" secondAttribute="bottom" id="CWC-xF-Thh"/>
