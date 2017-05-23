@@ -15,8 +15,12 @@ class MemeTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.estimatedRowHeight = 90.0
-        tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.reloadData()
+        
+        //tableView.estimatedRowHeight = 90.0
+        //tableView.rowHeight = UITableViewAutomaticDimension
+        
+        //tableView.delegate = self
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,14 +38,18 @@ class MemeTableVC: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return memeAll.count
     }
 
@@ -53,9 +61,18 @@ class MemeTableVC: UITableViewController {
         cell.nameLabel?.text = meme.topText + " / " + meme.bottomText
         cell.memeImageView?.image = meme.memedImage
 
-
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        
+        detailVC.meme = self.memeAll[indexPath.row]
+        
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
+
 
     /*
     // Override to support conditional editing of the table view.

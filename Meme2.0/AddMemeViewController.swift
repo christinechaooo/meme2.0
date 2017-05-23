@@ -18,10 +18,7 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var bottomBar: UIToolbar!
     @IBOutlet weak var navBar: UINavigationBar!
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
+
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.black,
         NSForegroundColorAttributeName : UIColor.white,

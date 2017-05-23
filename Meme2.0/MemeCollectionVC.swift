@@ -12,10 +12,21 @@ private let reuseIdentifier = "MemeCollectionCell"
 
 class MemeCollectionVC: UICollectionViewController {
     
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     var memeAll = [Meme]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let space: CGFloat = 5.0
+        let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        
+        self.collectionView?.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -65,6 +76,14 @@ class MemeCollectionVC: UICollectionViewController {
         // Configure the cell
     
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        
+        detailVC.meme = self.memeAll[indexPath.row]
+        
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 
     // MARK: UICollectionViewDelegate
