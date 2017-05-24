@@ -15,6 +15,9 @@ class MemeTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(Meme(fromImageWithDefaultValues: UIImage(named: "meme1")!))
+        
         self.tableView.reloadData()
         
         //tableView.estimatedRowHeight = 90.0
@@ -58,7 +61,8 @@ class MemeTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableCell", for: indexPath) as! MemeTableViewCell
         let meme = self.memeAll[(indexPath as NSIndexPath).row]
         
-        cell.nameLabel?.text = meme.topText + " / " + meme.bottomText
+        cell.topLabel?.text = meme.topText
+        cell.bottomLabel?.text = meme.bottomText
         cell.memeImageView?.image = meme.memedImage
 
         return cell
@@ -72,8 +76,6 @@ class MemeTableVC: UITableViewController {
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
-
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -32,6 +32,8 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
         configureTextStyle(textfield: topTF, withText: "TOP")
         configureTextStyle(textfield: bottomTF, withText: "BOTTOM")
         
+        imageView.contentMode = .scaleAspectFill
+        
         shareBtn.isEnabled = false
     }
     
@@ -147,7 +149,7 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func save() {
         print("save")
-        let meme = Meme( topText: topTF.text!, bottomText: bottomTF.text!, image: imageView.image!, memedImage: generateMemedImage())
+        let meme = Meme( topText: topTF.text!, bottomText: bottomTF.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
         
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate

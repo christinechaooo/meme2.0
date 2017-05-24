@@ -12,6 +12,20 @@ import UIKit
 struct Meme {
     let topText:String
     let bottomText:String
-    let image:UIImage
+    let originalImage:UIImage
     let memedImage:UIImage
+    
+    init(topText: String, bottomText: String, originalImage: UIImage, memedImage: UIImage) {
+        self.topText = topText
+        self.bottomText = bottomText
+        self.originalImage = originalImage
+        self.memedImage = memedImage
+    }
+    
+    init(fromImageWithDefaultValues image: UIImage) {
+        topText = "TOP"
+        bottomText = "BOTTOM"
+        originalImage = image
+        memedImage = image
+    }
 }
