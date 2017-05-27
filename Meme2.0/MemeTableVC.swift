@@ -20,7 +20,10 @@ class MemeTableVC: UITableViewController {
         
         self.tableView.reloadData()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         //tableView.estimatedRowHeight = 90.0
+        
+
         //tableView.rowHeight = UITableViewAutomaticDimension
         
         //tableView.delegate = self
@@ -32,6 +35,21 @@ class MemeTableVC: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func rotated() {
+        self.tableView.reloadData()
+        
+        if UIDevice.current.orientation.isLandscape {
+            print("Landscape")
+        } else {
+            print("Portrait")
+        }
+    }
+    
+
     override func viewWillAppear(_ animated: Bool) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memeAll = appDelegate.memes

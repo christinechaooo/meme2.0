@@ -32,8 +32,6 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
         configureTextStyle(textfield: topTF, withText: "TOP")
         configureTextStyle(textfield: bottomTF, withText: "BOTTOM")
         
-        imageView.contentMode = .scaleAspectFill
-        
         shareBtn.isEnabled = false
     }
     
@@ -64,7 +62,7 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
-            imageView.contentMode = .scaleAspectFit
+            imageView.contentMode = .scaleAspectFill
         }
         
         dismiss(animated: true, completion: nil)

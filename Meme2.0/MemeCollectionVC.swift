@@ -19,12 +19,7 @@ class MemeCollectionVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let space: CGFloat = 5.0
-        let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
-        
-        flowLayout.minimumInteritemSpacing = space
-        flowLayout.minimumLineSpacing = space
-        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        setFlowLayout()
         
         self.collectionView?.reloadData()
 
@@ -47,7 +42,28 @@ class MemeCollectionVC: UICollectionViewController {
         memeAll = appDelegate.memes
         
         self.collectionView?.reloadData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setFlowLayout), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         //self.collectionView.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func setFlowLayout() {
+        let space: CGFloat = 5.0
+        let dimension:CGFloat
+        
+        if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
+            dimension = (view.frame.size.width - (2 * space)) / 3.0
+        } else {
+            dimension = (view.frame.size.width - (4 * space)) / 5.0
+        }
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
     /*
     // MARK: - Navigation
