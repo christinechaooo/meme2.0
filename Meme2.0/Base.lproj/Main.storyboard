@@ -148,13 +148,13 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dIR-G8-M5v" id="8ci-Oc-Vhl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J04-8M-hBy">
                                             <rect key="frame" x="16" y="0.0" width="90" height="90"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="90" id="Tch-ig-Pz1"/>
+                                                <constraint firstAttribute="width" constant="90" id="IoS-3l-GkK"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGa-8C-Ebd">
@@ -171,14 +171,13 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Usr-19-Vgx" firstAttribute="leading" secondItem="J04-8M-hBy" secondAttribute="trailing" constant="8" id="1uU-dL-xrR"/>
                                         <constraint firstItem="sGa-8C-Ebd" firstAttribute="top" secondItem="Usr-19-Vgx" secondAttribute="bottom" constant="12" id="5h4-28-Tdn"/>
+                                        <constraint firstItem="J04-8M-hBy" firstAttribute="leading" secondItem="8ci-Oc-Vhl" secondAttribute="leadingMargin" constant="8" id="7A0-pb-TGJ"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="sGa-8C-Ebd" secondAttribute="bottom" constant="12" id="GAT-s2-PI8"/>
-                                        <constraint firstItem="J04-8M-hBy" firstAttribute="top" secondItem="8ci-Oc-Vhl" secondAttribute="topMargin" constant="-8" id="bqk-Nv-fJF"/>
-                                        <constraint firstItem="J04-8M-hBy" firstAttribute="leading" secondItem="8ci-Oc-Vhl" secondAttribute="leading" constant="16" id="fYG-Gf-M1L"/>
-                                        <constraint firstItem="J04-8M-hBy" firstAttribute="top" secondItem="8ci-Oc-Vhl" secondAttribute="top" id="mBP-gd-P1g"/>
-                                        <constraint firstItem="sGa-8C-Ebd" firstAttribute="leading" secondItem="J04-8M-hBy" secondAttribute="trailing" constant="8" id="tas-tp-pDF"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="J04-8M-hBy" secondAttribute="trailing" constant="261" id="zm8-Dz-RRB"/>
+                                        <constraint firstItem="J04-8M-hBy" firstAttribute="centerY" secondItem="8ci-Oc-Vhl" secondAttribute="centerY" id="e3Y-7k-fga"/>
+                                        <constraint firstItem="sGa-8C-Ebd" firstAttribute="leading" secondItem="J04-8M-hBy" secondAttribute="trailing" constant="8" symbolic="YES" id="lVU-in-6UV"/>
+                                        <constraint firstItem="J04-8M-hBy" firstAttribute="top" secondItem="8ci-Oc-Vhl" secondAttribute="top" id="rGl-MB-91f"/>
+                                        <constraint firstItem="Usr-19-Vgx" firstAttribute="leading" secondItem="J04-8M-hBy" secondAttribute="trailing" constant="8" symbolic="YES" id="wCH-s8-ptC"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
