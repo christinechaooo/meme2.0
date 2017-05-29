@@ -121,8 +121,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bPn-3C-ipg" firstAttribute="width" secondItem="pmb-P7-Ckg" secondAttribute="width" id="JVx-5z-Uic"/>
-                            <constraint firstItem="bPn-3C-ipg" firstAttribute="height" secondItem="pmb-P7-Ckg" secondAttribute="height" id="VjY-co-VVX"/>
+                            <constraint firstItem="bPn-3C-ipg" firstAttribute="leading" secondItem="pmb-P7-Ckg" secondAttribute="leading" id="5vr-vj-zxv"/>
+                            <constraint firstItem="bPn-3C-ipg" firstAttribute="bottom" secondItem="z9W-c3-9gS" secondAttribute="top" id="BhY-hX-lSl"/>
+                            <constraint firstItem="bPn-3C-ipg" firstAttribute="width" relation="lessThanOrEqual" secondItem="pmb-P7-Ckg" secondAttribute="width" id="JVx-5z-Uic"/>
+                            <constraint firstItem="bPn-3C-ipg" firstAttribute="height" relation="lessThanOrEqual" secondItem="pmb-P7-Ckg" secondAttribute="height" id="VjY-co-VVX"/>
                             <constraint firstItem="bPn-3C-ipg" firstAttribute="centerY" secondItem="pmb-P7-Ckg" secondAttribute="centerY" id="bES-An-fDW"/>
                             <constraint firstItem="bPn-3C-ipg" firstAttribute="centerX" secondItem="pmb-P7-Ckg" secondAttribute="centerX" id="dqo-gZ-yr8"/>
                         </constraints>

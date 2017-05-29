@@ -153,7 +153,6 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
         
-        print(appDelegate.memes)
         dismiss(animated: true, completion: nil)
     }
     
@@ -164,8 +163,7 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.bottomBar.isHidden = true
         
         UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawHierarchy(in: self.view.frame,
-                                     afterScreenUpdates: true)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
