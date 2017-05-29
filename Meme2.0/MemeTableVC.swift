@@ -16,6 +16,7 @@ class MemeTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
 //        appDelegate.memes.append(Meme(fromImageWithDefaultValues: UIImage(named: "meme1")!))
         self.tableView.reloadData()
         

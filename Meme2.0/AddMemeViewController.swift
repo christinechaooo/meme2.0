@@ -22,7 +22,7 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.black,
         NSForegroundColorAttributeName : UIColor.white,
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSFontAttributeName : UIFont(name: "Impact", size: 40)!,
         NSStrokeWidthAttributeName : Float(-4)
         ] as [String : Any]
     
@@ -62,7 +62,7 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
-            imageView.contentMode = .scaleAspectFill
+            imageView.contentMode = .scaleAspectFit
         }
         
         dismiss(animated: true, completion: nil)
